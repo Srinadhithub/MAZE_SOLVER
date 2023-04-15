@@ -53,10 +53,15 @@ public class MAZE_SOLVER   extends JFrame{
 				g.drawRect(50*i, 50*j, 50, 50);
 			}
 		}
-		for(int i=2;i<path.size();i+=2) {
+		for(int i=path.size()-1;i>=0;i-=2) {
+			try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException ex) {
+                        Logger.getLogger(MAZE_SOLVER.class.getName()).log(Level.SEVERE, null, ex);
+                    }
 			g.setColor(Color.GREEN);
 			int x=path.get(i);
-			int y=path.get(i+1);
+			int y=path.get(i-1);
 			g.fillRect(x*50, 50*y, 45, 45);
 		}
 		
